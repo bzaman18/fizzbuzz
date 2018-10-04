@@ -25,10 +25,8 @@ public class FizzBuzzTest {
     @Autowired
     private MockMvc mockMvc;
 
-  
     @Test
-    public void greetingShouldReturnMessageFromService() throws Exception {
-       
+    public void greetingShouldReturnMessageFromService() throws Exception {      
         this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("hi there, Are you Fizz or Buzz")));
     }
